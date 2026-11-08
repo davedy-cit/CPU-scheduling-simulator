@@ -1,0 +1,33 @@
+{
+  "name": "interactive-cpu-scheduling-simulator",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Interactive CPU Scheduling & Process Lifecycle Simulator — a deterministic, client-side discrete-time simulator for CCS635.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "test": "node --test \"src/**/__tests__/**/*.test.js\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist --dotfiles -m \"deploy\""
+  },
+  "dependencies": {
+    "framer-motion": "14.10.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@tailwindcss/vite": "4.3.5",
+    "@vitejs/plugin-react": "6.2.1",
+    "eslint": "10.14.0",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-react-refresh": "0.5.7",
+    "gh-pages": "6.3.0",
+    "globals": "17.14.0",
+    "tailwindcss": "4.3.5",
+    "vite": "8.3.6"
+  }
+}

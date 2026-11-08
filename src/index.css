@@ -1,0 +1,83 @@
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------------------
+   Tailwind v4 design tokens.
+
+   v4 is CSS-first: there is no tailwind.config.js and no postcss.config.js.
+   Every custom property declared in @theme below becomes a utility, e.g.
+   --color-ink-muted  ->  text-ink-muted / bg-ink-muted / border-ink-muted
+   --radius-card      ->  rounded-card
+   --shadow-card      ->  shadow-card
+--------------------------------------------------------------------------- */
+@theme {
+  /* Surfaces and ink */
+  --color-surface: #ffffff;
+  --color-surface-muted: #f8fafc;
+  --color-surface-sunken: #f1f5f9;
+  --color-ink: #0f172a;
+  --color-ink-muted: #64748b;
+  --color-ink-subtle: #94a3b8;
+  --color-line: #e2e8f0;
+  --color-line-strong: #cbd5e1;
+  --color-accent: #16a34a;
+  --color-accent-hover: #15803d;
+
+  /* Process lifecycle states (spec §5). Used for column accents, badges and
+     the legend — never as the sole carrier of meaning. */
+  --color-state-new: #94a3b8;
+  --color-state-ready: #2a78d6;
+  --color-state-running: #008300;
+  --color-state-waiting: #eda100;
+  --color-state-io: #6250d6;
+  --color-state-terminated: #e87ba4;
+  --color-state-idle: #898781;
+
+  /* Per-process palette, indexed by ProcessSpec.colorIndex (1..8).
+     Chips are coloured by PROCESS so a token stays identifiable as it moves
+     between columns — that is what makes the animation requirement legible. */
+  --color-proc-1: #2563eb;
+  --color-proc-2: #0d9488;
+  --color-proc-3: #d97706;
+  --color-proc-4: #dc2626;
+  --color-proc-5: #7c3aed;
+  --color-proc-6: #0891b2;
+  --color-proc-7: #ca8a04;
+  --color-proc-8: #db2777;
+
+  --radius-card: 0.75rem;
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.06), 0 1px 3px rgb(15 23 42 / 0.04);
+  --shadow-raised: 0 4px 12px rgb(15 23 42 / 0.08);
+
+  --font-sans:
+    'Inter var', 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --font-mono:
+    ui-monospace, 'SFMono-Regular', 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-surface-muted);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Numeric columns line up; proportional figures stay everywhere else. */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-state-ready);
+    outline-offset: 2px;
+  }
+}
