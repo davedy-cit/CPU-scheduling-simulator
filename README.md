@@ -1,11 +1,50 @@
 # Interactive CPU Scheduling & Process Lifecycle Simulator
 
+> **⚠️ AI-Assisted Development Notice**  
+> This simulator was built with substantial assistance from **Claude Code (Anthropic)** — an AI coding agent. The architecture, engine implementation, test suite, UI components, and documentation were co-developed through iterative human-AI collaboration. All code has been reviewed, tested (298 assertions), and verified against the CCS635 assignment specification by the student author.
+
 A client-side single-page application that simulates CPU scheduling and process lifecycles for the
 CCS635 assignment brief: six scheduling algorithms, one logical CPU, two concurrent I/O devices,
 a deterministic logical clock, and a fully animated dashboard — no backend, no database.
 
 **Stack:** React 19 · Vite 8 · Tailwind CSS v4 · Framer Motion · deployed to GitHub Pages.
 **Tests:** Node's built-in `node --test` — 298 assertions, zero added dependencies.
+
+## Preview
+
+The dashboard mid-run on the §4 workload under FCFS, scrubbed to `t = 600`. Every panel reads from the
+same cursor: the flow board shows where each process currently lives, the resource timelines show the
+run so far, and the KPI strip recomputes against the frozen trace.
+
+![Dashboard at t = 600 ms — process flow board, KPI strip and resource timelines](docs/images/hero.png)
+
+<details>
+<summary><strong>More screenshots</strong> — landing view, mid-run full page, Compare All, and the finished schedule</summary>
+
+<br>
+
+**At `t = 0`** — nothing has arrived yet, so the flow board is empty and the scheduled-arrivals strip
+lists the full arrival schedule. This is the state the app opens in.
+
+![Dashboard at t = 0](docs/images/dashboard-home.png)
+
+**Mid-run, full page** — the same `t = 600` state as the banner above, showing the complete scroll:
+process table with per-burst progress, performance measures, the workload editor, the event trace and
+the process history log.
+
+![Full dashboard at t = 600 ms](docs/images/dashboard-running.png)
+
+**Compare All** — all six algorithms run over a frozen copy of the workload, with the best value per
+metric marked and the per-algorithm detail expanded.
+
+![Compare All across the six scheduling algorithms](docs/images/compare-all.png)
+
+**Run to end** — the finished schedule at `t = 1200 ms`, with all five processes terminated and the CPU,
+Device A and Device B timelines complete.
+
+![Finished schedule at t = 1200 ms](docs/images/dashboard-complete.png)
+
+</details>
 
 ## Quick start
 
