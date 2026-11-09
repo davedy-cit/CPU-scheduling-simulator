@@ -32,6 +32,7 @@ export function TopBar() {
           <p className="text-[11px] font-semibold tracking-[0.14em] text-ink-subtle uppercase">
             CCS635 · Advanced Operating Systems &amp; Networking
           </p>
+          <p className="text-[11px] font-medium text-ink-muted">Dave Mariquit, MIT-I</p>
           <h1 className="truncate text-lg leading-tight font-semibold text-ink">
             Interactive CPU Scheduling &amp; Process Lifecycle Simulator
           </h1>

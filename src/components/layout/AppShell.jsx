@@ -47,6 +47,11 @@ export function AppShell({ children }) {
           the trace exactly. Context-switch counting, the makespan origin and the Ready-Queue
           ordering convention are documented in the README.
         </p>
+        <p className="text-[10px] text-ink-subtle/70 mt-1.5">
+          🤖 This simulator was built with substantial assistance from <strong>Claude Code (Anthropic)</strong> —
+          an AI coding agent. All code has been reviewed, tested (298 assertions), and verified against
+          the CCS635 assignment specification by the student author.
+        </p>
       </footer>
     </div>
   );
